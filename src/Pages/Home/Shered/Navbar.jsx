@@ -4,7 +4,7 @@ import AuthContext from "../../../Context/AuthContext/AuthContext";
 import logo from "../../../assets/img/logo.png"
 const Navbar = () => {
 
-    const { user } = useContext(AuthContext);
+    const { user, signOutUser } = useContext(AuthContext);
 
     const handleSignOut = () => {
         signOutUser()
