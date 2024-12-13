@@ -1,6 +1,7 @@
 import { motion } from "motion/react"
 import team1 from '../../assets/banner/pa1.jpg';
 import team2 from '../../assets/banner/pa2.jpg';
+import { Link } from "react-router-dom";
 const Banner = () => {
     return (
         <div className="hero bg-base-200 min-h-screen">
@@ -27,10 +28,11 @@ const Banner = () => {
                         >job</motion.span> for you</motion.h1>
 
                     <p className="py-6">
-                        Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
-                        quasi. In deleniti eaque aut repudiandae et a id nisi.
+                        Opportunities abound for those willing to embrace change and pursue growth. With determination and creativity, challenges become stepping stones to success.
                     </p>
-                    <button className="btn btn-primary">Get Started</button>
+                    <Link to="/jobApply/:id">
+                        <button className="btn btn-primary">Get Started</button>
+                    </Link>
                 </div>
             </div>
         </div>

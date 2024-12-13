@@ -5,9 +5,9 @@ const Footer = () => {
             <aside>
                 <img src={logo} alt="logo" />
                 <p>
-                    ACME Industries Ltd.
+                    <span className="text-xl font-bold text-sky-400">MH</span> Industries Ltd.
                     <br />
-                    Providing reliable tech since 1992
+                    Providing reliable tech since 2024
                 </p>
             </aside>
             <nav>

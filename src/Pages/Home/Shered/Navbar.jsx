@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import AuthContext from "../../../Context/AuthContext/AuthContext";
 import logo from "../../../assets/img/logo.png"
+import { motion } from "motion/react"
 const Navbar = () => {
 
     const { user, signOutUser } = useContext(AuthContext);
@@ -48,7 +49,10 @@ const Navbar = () => {
                 </div>
                 <a className="flex text-xl">
                     <img className="w-12" src={logo} alt="logo" />
-                    <h3>Job Portal</h3>
+                    <h3 className="font-bold text-2xl text-sky-400"><motion.span
+                        animate={{ color: ['#ecff33', '#33ffe3', '#ff6133'] }}
+                        transition={{ duration: 1.5, repeat: Infinity }}
+                    >job</motion.span>  Portal</h3>
                 </a>
             </div>
             <div className="navbar-center hidden lg:flex">
