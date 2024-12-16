@@ -8,7 +8,7 @@ const ViewApplications = () => {
         const data = {
             status: e.prevent.value
         }
-        fetch(`http://localhost:5000/job-application/${id}`, {
+        fetch(`https://job-portal-server-seven-psi.vercel.app/job-application/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
