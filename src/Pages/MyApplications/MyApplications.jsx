@@ -10,18 +10,20 @@ const MyApplications = () => {
     const axiosSecure = useAxiosSecure();
 
     useEffect(() => {
-        // fetch(`https://job-portal-server-seven-psi.vercel.app/job-application?email=${user.email}`)
+        // fetch(`http://localhost:5000/job-application?email=${user.email}`)
         //     .then(res => res.json())
         //     .then(data => setJobs(data))
 
-        // axios.get(`https://job-portal-server-seven-psi.vercel.app/job-application?email=${user.email}`,{ 
+        // axios.get(`http://localhost:5000/job-application?email=${user.email}`,{ 
         //     withCredentials: true 
         // })
         //     .then(res => setJobs(res.data))
 
-        axiosSecure.get(`/job-application?email=${user.email}`)
-            .then(res => setJobs(res.data));
-    }, [user.email]);
+        if (user?.email) {
+            axiosSecure.get(`/job-application?email=${user.email}`)
+                .then(res => setJobs(res.data));
+        }
+    }, [user?.email]);
     return (
         <div>
             <h2 className="text-3xl">My Application: {jobs.length}</h2>

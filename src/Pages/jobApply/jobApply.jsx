@@ -24,7 +24,7 @@ const JobApply = () => {
             github,
             resume
         };
-        fetch('https://job-portal-server-seven-psi.vercel.app/job-applications', {
+        fetch('http://localhost:5000/job-applications', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

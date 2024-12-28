@@ -6,16 +6,19 @@ const HotJobs = () => {
     const [jobs, setJobs] = useState([]);
 
     useEffect(() => {
-        fetch('https://job-portal-server-seven-psi.vercel.app/job')
-            .then(res => res.json())
-            .then(data => setJobs(data))
+        fetch('http://localhost:5000/job?sort=false')
+            .then((res) => res.json())
+            .then((data) => {
+                setJobs(data);
+            });
     }, []);
     return (
         <div>
+            <h2 className="text-4xl mt-10 text-center font-bold "> Hot Jobs</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 pb-20">
-                {
-                    jobs.map(job => <HotJobCard key={job._id} job={job}></HotJobCard>)
-                }
+                {jobs.map((job) => (
+                    <HotJobCard key={job._id} job={job}></HotJobCard>
+                ))};
             </div>
         </div>
     );
